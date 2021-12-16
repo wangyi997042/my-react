@@ -4,7 +4,7 @@ import ConsumerPage from "./ConsumerPage";
 import UseContextPage from "./UseContextPage";
 
 const ContextPage = () => {
-  const [value, setValue] = useState({
+  const [value] = useState({
     theme: {
       themeColor: "red",
     },
