@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { ThemeConsumer } from "./Context";
+import { ThemeContext } from "./Context";
 
 const UseContextPage = () => {
-  const { themeColor } = useContext(ThemeConsumer);
+  const { themeColor } = useContext(ThemeContext);
 
   return <div style={{ color: themeColor }}>UseContextPage</div>;
 };
