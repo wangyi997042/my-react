@@ -250,7 +250,7 @@ function AntdFormPage() {
           required: true
         }]}
       >
-        <Select placeholder="xuze" onChange={onGenderChange} allowClear>
+        <Select onChange={onGenderChange} allowClear>
           <Option value={'male'}>male</Option>
           <Option value={'female'}>female</Option>
           <Option value={'other'}>other</Option>
@@ -258,6 +258,7 @@ function AntdFormPage() {
 
       </FormItem>
       <FormItem
+        noStyle
         shouldUpdate={(preVal, newVal) => {
           console.log(preVal, newVal);
           return preVal.gender !== newVal.gender
@@ -270,6 +271,17 @@ function AntdFormPage() {
             </FormItem>
           ) : null
         }
+      </FormItem>
+
+      <FormItem
+        noStyle
+        shouldUpdate={(preVal, newVal) => preVal.gender !== newVal.gender}
+      >
+        {({ getFieldValue }) => getFieldValue('gender') === 'other' ? (
+          <FormItem name={'other'} label="other">
+            <Input />
+          </FormItem>
+        ) : null}
       </FormItem>
       {/* <FormItem
         name="gender"

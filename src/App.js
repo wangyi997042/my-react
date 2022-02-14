@@ -1,10 +1,11 @@
 import React from 'react';
-import {Base} from './pages';
+import { Base, KReact } from './pages';
 
 const App = () => {
     return (
         <div>
             <Base />
+            {/* <KReact /> */}
         </div>
     )
 }
