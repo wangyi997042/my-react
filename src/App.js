@@ -1,11 +1,13 @@
 import React from 'react';
-import { Base, KReact } from './pages';
+import { Base, KReact, KHooks } from './pages';
+
 
 const App = () => {
     return (
         <div>
-            <Base />
+            {/* <Base /> */}
             {/* <KReact /> */}
+            <KHooks />
         </div>
     )
 }
