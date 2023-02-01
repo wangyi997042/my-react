@@ -11,9 +11,9 @@ function Base() {
   return (
     <div className='base-page'>
       {/* <ContextPage /> */}
-      <AntdFormPage />
+      {/* <AntdFormPage /> */}
       {/* <TestAntd /> */}
-      {/* <MyRcForm /> */}
+      <MyRcForm />
       {/* <MyRcFieldForm /> */}
     </div>
   );

@@ -35,9 +35,13 @@ class MyRcForm extends Component {
     console.log('props===', this.props);
     const { form } = this.props;
     setTimeout(() => {
-      form.setFieldsValue({
-        username: 234
-      })
+      form.setFieldValue('username', 'jiade')
+      // form.setFieldsValue({
+      //   username: 234
+      // })
+    }, 2000)
+    setTimeout(() => {
+      form.setFieldValue('pass', true)
     }, 2000)
   }
   submit = () => {
@@ -57,13 +61,14 @@ class MyRcForm extends Component {
             reules: [nameRules]
           })(<Input placeholder='Username' />)
         }
-        {/* {
+
+        {
           getFieldDecorator('pass', {
             initialValue: false
           })(<Switch />)
         }
-        {
-          getFieldValue('pass') && 
+        {/* {
+          getFieldValue('pass') &&
           getFieldDecorator('password', {
             rules: [passwordRules]
           })(

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 function createForm(Cmp) {
 
@@ -10,7 +10,7 @@ function createForm(Cmp) {
     }
     handleChange = (e) => {
       const { name, value } = e.target;
-      this.setState({[name]: value})
+      this.setState({ [name]: value })
     }
     getFieldDecorator = (field, option) => InputCmp => {
       this.options[field] = option
@@ -27,15 +27,15 @@ function createForm(Cmp) {
     getFieldValue = (name) => {
       return this.state[name]
     }
-    setFieldsValue = (newStore) => {this.setState(newStore)}
+    setFieldsValue = (newStore) => { this.setState(newStore) }
 
     getForm = () => {
       return {
         form: {
-          getFieldsValue : this.getFieldsValue,
-        getFieldValue : this.getFieldValue,
-        setFieldsValue : this.setFieldsValue,
-        getFieldDecorator : this.getFieldDecorator
+          getFieldsValue: this.getFieldsValue,
+          getFieldValue: this.getFieldValue,
+          setFieldsValue: this.setFieldsValue,
+          getFieldDecorator: this.getFieldDecorator
         }
       }
     }
