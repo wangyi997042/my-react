@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Form, { Field } from "rc-field-form"
+// import Form, { Field } from "rc-field-form"
+import Form, { Field } from "../components/my-rc-field-form/";
 
 import { Button, Input } from 'antd';
 

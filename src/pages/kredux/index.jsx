@@ -13,8 +13,8 @@ export default class KReact extends React.Component {
     return (
       <Provider store={store}>
         <ReduxPage />
-        {/* <HooksPage /> */}
-        {/* <ConnectReduxPage /> */}
+        <HooksPage />
+        <ConnectReduxPage />
       </Provider>
     )
   }

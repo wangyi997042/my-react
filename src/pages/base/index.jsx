@@ -13,8 +13,8 @@ function Base() {
       {/* <ContextPage /> */}
       {/* <AntdFormPage /> */}
       {/* <TestAntd /> */}
-      <MyRcForm />
-      {/* <MyRcFieldForm /> */}
+      {/* <MyRcForm /> */}
+      <MyRcFieldForm />
     </div>
   );
 }
