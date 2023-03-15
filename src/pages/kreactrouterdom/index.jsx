@@ -1,5 +1,19 @@
 
-import React, { useState } from "react";
+import React, { useState, Component } from "react";
+
+// import {
+//   BrowserRouter as Router,
+//   Route,
+//   Link,
+//   Switch,
+//   Redirect,
+//   useHistory,
+//   useLocation,
+//   useRouteMatch,
+//   useParams,
+//   withRouter,
+//   Prompt,
+// } from "react-router-dom";
 
 import {
   BrowserRouter as Router,
@@ -12,8 +26,10 @@ import {
   useRouteMatch,
   useParams,
   withRouter,
-  Prompt,
-} from "react-router-dom";
+} from "./k-react-router-dom";
+
+
+
 import './index.less';
 
 import HomePage from "./page/HomePage";
@@ -32,6 +48,7 @@ function RouterPage() {
       <Link to='/user'> 用户 </Link>
       <Link to='/login'> 登陆 </Link>
       <Link to={`/product/123?a=${state}`}> 商品 </Link>
+      <Link to={`/product1/123?a=${state}`}> 商品1 </Link>
 
       <Switch>
         <Route
@@ -40,9 +57,11 @@ function RouterPage() {
           children={children}
         >
         </Route>
+        {/* <Redirect from="/user" to="/login" /> */}
         <Route path="/user" component={UserPage} />
         <Route path="/login" component={LoginPage} />
         <Route path={`/product/:id`} render={() => <Product />} />
+        <Route path={`/product1/:id`} render={() => <Product2 />} />
         <Route component={Page404} />
       </Switch>
     </Router>
@@ -70,10 +89,31 @@ function Product() {
 
   return (
     <div>
-      <h1>search-{id}</h1>
+      <h1>Search-{id}</h1>
+      <Link to={url + "/detail"}>详情</Link>
+      <Route path={url + "/detail"} component={Detail} />
     </div>
   )
 }
 
 
+class Product1 extends Component {
+  render() {
+    console.log(this.props)
+    return (
+      <div>
+        {/* <h1>search-{id}</h1> */}
+        2
+      </div>
+    )
+  }
+}
+
+const Product2 = withRouter(Product1)
+
+const Detail = () => {
+  return (
+    <div>Detail</div>
+  )
+}
 export default RouterPage;
