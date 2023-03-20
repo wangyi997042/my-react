@@ -1,5 +1,5 @@
 import React from 'react';
-import { Base, KRedux, KHooks, KReactRouterDom } from './pages';
+import { Base, KRedux, KHooks, KReactRouterDom, Kreact } from './pages';
 
 
 const App = () => {
@@ -8,7 +8,8 @@ const App = () => {
             {/* <Base /> */}
             {/* <KRedux /> */}
             {/* <KHooks /> */}
-            <KReactRouterDom />
+            {/* <KReactRouterDom /> */}
+            <Kreact />
         </div>
     )
 }
