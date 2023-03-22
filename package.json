@@ -23,7 +23,6 @@
     "css-minimizer-webpack-plugin": "^3.2.0",
     "dotenv": "^10.0.0",
     "dotenv-expand": "^5.1.0",
-    "eslint": "^8.3.0",
     "eslint-config-react-app": "^7.0.0",
     "eslint-webpack-plugin": "^3.1.1",
     "file-loader": "^6.2.0",
@@ -71,7 +70,9 @@
   "scripts": {
     "dev": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -92,11 +93,28 @@
     ]
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
     "customize-cra": "^1.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-webpack": "^0.13.2",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^7.0.0-beta.4",
+    "husky": "^8.0.1",
     "less": "^4.1.2",
     "less-loader": "^10.2.0",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.6",
     "rc-field-form": "^1.22.0",
-    "rc-form": "^2.4.12"
+    "rc-form": "^2.4.12",
+    "standard": "^16.0.4",
+    "stylelint": "^15.3.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^31.0.0",
+    "stylelint-prettier": "^3.0.0"
   },
   "jest": {
     "roots": [
@@ -149,9 +167,13 @@
     ],
     "resetMocks": true
   },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
+  "lint-staged": {
+    "src/**/*.less": "stylelint --syntax less --fix",
+    "**/*.{js,jsx,ts,tsx}": "eslint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test && npm run foo"
+    }
   }
 }
