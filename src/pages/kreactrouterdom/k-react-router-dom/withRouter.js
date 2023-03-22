@@ -1,14 +1,10 @@
 import React from "react";
 import RouterContext from "./RouterContext";
 
-const withRouter = (WrapperComponent) => (props) => {
-  return (
+const withRouter = (WrapperComponent) => (props) => (
     <RouterContext.Consumer>
-      {(context) => {
-        return <WrapperComponent {...props} {...context} />
-      }}
+      {(context) => <WrapperComponent {...props} {...context} />}
     </RouterContext.Consumer>
-  )
-}
+)
 
 export default withRouter;

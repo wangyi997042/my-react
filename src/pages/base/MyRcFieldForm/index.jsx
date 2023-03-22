@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
 // import Form, { Field } from "rc-field-form"
-import Form, { Field } from "../components/my-rc-field-form/";
-
 import { Button, Input } from 'antd';
+import Form, { Field } from "../components/my-rc-field-form";
 
 const userNameRules = { required: true, message: '用户名必填！！！' }
 const passwordRules = { required: true, message: '密码必填！！！' }
-
 
 export default function MyRcFieldForm() {
   const [form] = Form.useForm()
   console.log('Form', Form);
   console.log('form', form);
 
-  const onFinish = val => {
+  const onFinish = (val) => {
     console.log('onFinish', val);
   }
 
-  const onFinishFailed = val => {
+  const onFinishFailed = (val) => {
     console.log('onFinishFaild', val);
   }
 
@@ -54,7 +52,6 @@ export default function MyRcFieldForm() {
 //     })
 //   }
 
-
 //   onFinish = (val) => {
 //     console.log(val, this.formRef);
 //   }
@@ -66,7 +63,6 @@ export default function MyRcFieldForm() {
 //   onFinishFailed = (val) => {
 //     console.log(val);
 //   }
-
 
 //   render() {
 //     return (
@@ -94,4 +90,3 @@ export default function MyRcFieldForm() {
 //     )
 //   }
 // }
-

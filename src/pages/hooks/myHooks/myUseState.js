@@ -1,9 +1,7 @@
-
-
 // 存储状态的数组
-let state = []
+const state = []
 // 存储更改状态方法的数组
-let setters = []
+const setters = []
 // 用来记录状态和更改状态方法对应关系的下标
 let stateIndex = 0
 
@@ -33,6 +31,5 @@ export const myUseState = (initialState) => {
   stateIndex++
   return [value, setter]
 }
-
 
 export default myUseState;

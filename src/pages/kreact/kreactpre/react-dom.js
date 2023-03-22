@@ -1,7 +1,4 @@
-
-
 function render(vnode, container) {
-
   console.log('vnode===', vnode);
   // 1 vnode => node
   const node = createNode(vnode);
@@ -22,7 +19,6 @@ function createNode(vnode) {
     reconcileChildren(node, props.children)
     updateNode(node, props);
   } else if (typeof type === 'function') {
-
     node = type.prototype.isReactComponent
       ? updateClassComponent(vnode)
       : updateFunctionComponent(vnode)
@@ -53,12 +49,11 @@ function updateClassComponent(vnode) {
 
 function updateNode(node, val) {
   Object.keys(val)
-    .filter(k => k !== 'children')
-    .forEach(k => {
+    .filter((k) => k !== 'children')
+    .forEach((k) => {
       node[k] = val[k]
     })
 }
-
 
 function reconcileChildren(parentNode, children) {
   // 如果children是文本需要处理一下成数组

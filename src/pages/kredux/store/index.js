@@ -1,4 +1,3 @@
-
 // createStore, applyMiddleware,
 import { combineReducers } from 'redux'
 import { createStore, applyMiddleware } from '../redux'
@@ -20,11 +19,10 @@ export const countReducer = (state = 0, action) => {
   }
 }
 // combineReducers({ home: countReducer })
-// 
+//
 const store = createStore(combineReducers({ count: countReducer }), applyMiddleware(thunk, promise, logger))
 
 export default store;
-
 
 function thunk({ getState, dispatch }) {
   return (next) => (action) => {
@@ -50,11 +48,8 @@ function logger({ getState, dispatch }) {
   }
 }
 
-
 function promise({ getState, dispatch }) {
-  return (next) => (action) => {
-    return isPromise(action) ? action.then(dispatch) : next(action);
-  }
+  return (next) => (action) => (isPromise(action) ? action.then(dispatch) : next(action))
 }
 
 function isPromise(obj) {

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Form, Row, Col, Input, Button } from 'antd';
+import {
+  Form, Row, Col, Input, Button
+} from 'antd';
 import { DownOutlined, UpOutlined } from '@ant-design/icons';
 
 const AdvancedSearchForm = () => {
@@ -19,13 +21,13 @@ const AdvancedSearchForm = () => {
             rules={[
               {
                 required: true,
-                message: 'Input something!',
-              },
+                message: 'Input something!'
+              }
             ]}
           >
             <Input placeholder="placeholder" />
           </Form.Item>
-        </Col>,
+        </Col>
       );
     }
 
@@ -48,7 +50,7 @@ const AdvancedSearchForm = () => {
         <Col
           span={24}
           style={{
-            textAlign: 'right',
+            textAlign: 'right'
           }}
         >
           <Button type="primary" htmlType="submit">
@@ -56,7 +58,7 @@ const AdvancedSearchForm = () => {
           </Button>
           <Button
             style={{
-              margin: '0 8px',
+              margin: '0 8px'
             }}
             onClick={() => {
               form.resetFields();
@@ -66,7 +68,7 @@ const AdvancedSearchForm = () => {
           </Button>
           <a
             style={{
-              fontSize: 12,
+              fontSize: 12
             }}
             onClick={() => {
               setExpand(!expand);

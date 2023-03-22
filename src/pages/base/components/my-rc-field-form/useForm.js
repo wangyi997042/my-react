@@ -16,7 +16,7 @@ class FormStore {
   setCallbacks = (newCallbacks) => {
     this.callbacks = {
       ...this.callbacks,
-      ...newCallbacks,
+      ...newCallbacks
     };
   };
 
@@ -42,15 +42,15 @@ class FormStore {
   };
 
   // set  设置状态
-  //old {username: '123', password: 456}
+  // old {username: '123', password: 456}
   // new {usernmae:'1234'}
   setFieldsValue = (newStore) => {
     // 1. 更新store
     this.store = {
       ...this.store,
-      ...newStore,
+      ...newStore
     };
-    console.log("this.store", this.store); //sy-log
+    console.log("this.store", this.store); // sy-log
 
     // 2. 更新组件
     // todo
@@ -65,7 +65,7 @@ class FormStore {
 
   validate = () => {
     // 存储错误信息
-    let err = [];
+    const err = [];
 
     // todo 校验
 
@@ -73,7 +73,7 @@ class FormStore {
   };
 
   submit = () => {
-    let err = this.validate();
+    const err = this.validate();
     const { onFinish, onFinishFailed } = this.callbacks;
     if (err.length > 0) {
       // 出错了
@@ -91,7 +91,7 @@ class FormStore {
       setFieldsValue: this.setFieldsValue,
       setFieldEntities: this.setFieldEntities,
       setCallbacks: this.setCallbacks,
-      submit: this.submit,
+      submit: this.submit
     };
   };
 }

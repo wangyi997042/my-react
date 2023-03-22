@@ -8,7 +8,6 @@ import HooksPage from "./page/HooksPage";
 import ReduxPage from "./page/ReduxPage";
 
 export default class KReact extends React.Component {
-
   render() {
     return (
       <Provider store={store}>

@@ -22,9 +22,7 @@ class ConnectReduxPage extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { count: state.count }
-}
+const mapStateToProps = (state) => ({ count: state.count })
 const mapDispatchToProps = (dispatch) => {
   let creator = {
     add: () => ({ type: 'ADD' }),
@@ -38,6 +36,5 @@ const mapDispatchToProps = (dispatch) => {
     ...creator
   }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(ConnectReduxPage);

@@ -7,9 +7,9 @@ import ContextTypePage from "./ContextTypePage";
 const ContextPage = () => {
   const [value] = useState({
     theme: {
-      themeColor: "red",
+      themeColor: "red"
     },
-    user: { name: "xiaoping" },
+    user: { name: "xiaoping" }
   });
 
   return (

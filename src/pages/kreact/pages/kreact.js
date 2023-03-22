@@ -1,5 +1,5 @@
 // import ReactDOM from "react-dom";
-import ReactDOM from '../kreactpre/react-dom'
+import ReactDOM from '../fiberreact/react-dom'
 import Component from '../kreactpre/Component'
 
 import './index.css'
@@ -29,13 +29,15 @@ class ClassComponent extends Component {
 }
 
 const jsx = (
-  <div className="border">
+  <div className="border">1
     <h1>全栈</h1>
     <a href="https://www.baidu.com">百度</a>
-    <ul>
-      <li>1</li>
-      <li>2</li>
-    </ul>
+    <>
+      <ul>
+        <li>1</li>
+        <li>2</li>
+      </ul>
+    </>
     <FunctinComponent name="王一" />
     <ClassComponent name="王一c" />
   </div>

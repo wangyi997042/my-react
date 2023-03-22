@@ -3,8 +3,6 @@ import React from "react";
 const FieldContext = React.createContext();
 export default FieldContext;
 
-
-
 // ! 使用contextTypes三步走
 // 1. 创建context对象 createContext
 // 2. 使用Provider传递value

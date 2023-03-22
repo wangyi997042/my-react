@@ -8,8 +8,8 @@ class Switch extends Component {
       <RouterContext.Consumer>
         {
           (context) => {
-            const location = context.location;
-            let match; //记录是否匹配
+            const { location } = context;
+            let match; // 记录是否匹配
             let element; // 记录匹配的元素(router\redirect)
 
             // todo 遍历查找匹配

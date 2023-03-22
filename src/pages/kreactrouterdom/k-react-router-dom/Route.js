@@ -4,21 +4,22 @@ import matchPath from "./matchPath";
 import RouterContext from "./RouterContext";
 
 class Route extends Component {
-
   render() {
     return (
       <RouterContext.Consumer>
         {
           (context) => {
             const { location } = context;
-            const { path, component, render, children } = this.props;
+            const {
+              path, component, render, children
+            } = this.props;
             const match = path ? matchPath(location.pathname, this.props) : context.match;
             console.log('match', matchPath(location.pathname, this.props));
 
             const props = {
               ...context,
               location,
-              match,
+              match
             };
 
             return (

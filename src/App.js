@@ -1,9 +1,9 @@
 import React from 'react';
-import { Base, KRedux, KHooks, KReactRouterDom, Kreact } from './pages';
+import {
+  Base, KRedux, KHooks, KReactRouterDom, Kreact
+} from './pages';
 
-
-const App = () => {
-    return (
+const App = () => (
         <div>
             {/* <Base /> */}
             {/* <KRedux /> */}
@@ -11,7 +11,6 @@ const App = () => {
             {/* <KReactRouterDom /> */}
             <Kreact />
         </div>
-    )
-}
+)
 
 export default App

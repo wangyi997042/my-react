@@ -22,7 +22,6 @@ function compilePath(path, options) {
   return result;
 }
 
-
 function matchPath(pathname, options = {}) {
   if (typeof options === 'string' || Array.isArray(options)) {
     options = { path: options }
@@ -31,7 +30,7 @@ function matchPath(pathname, options = {}) {
     path,
     exact = false,
     strict = false,
-    sensitive = false,
+    sensitive = false
   } = options;
 
   const paths = [].concat(path)
@@ -63,7 +62,6 @@ function matchPath(pathname, options = {}) {
         return memo;
       }, {})
     }
-
   }, null)
 }
 

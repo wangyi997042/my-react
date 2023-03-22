@@ -1,7 +1,10 @@
-import React, { Component, createRef, useRef, useState } from "react";
-import { Button, Form, Input, Radio, Select, Space } from 'antd'
+import React, {
+  Component, createRef, useRef, useState
+} from "react";
+import {
+  Button, Form, Input, Radio, Select, Space
+} from 'antd'
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
-
 
 const nameRules = [{ required: true, message: "请输入姓名！" }];
 const passwordRules = [{ required: true, message: "请输入密码！" }];
@@ -23,8 +26,8 @@ const formItemLayout = {
 const formItemLayoutWithOutLabel = {
   wrapperCol: {
     xs: { span: 24, offset: 0 },
-    sm: { span: 20, offset: 4 },
-  },
+    sm: { span: 20, offset: 4 }
+  }
 };
 
 function AntdFormPage() {
@@ -71,14 +74,15 @@ function AntdFormPage() {
         name: 'hi baby'
       })
     }
-
   }
 
   const onValuesChange = ({ layout }) => {
     setFormLayout(layout)
   }
 
-  return <div style={{ width: '500px', border: '1px solid #333', margin: '20px auto', padding: '20px' }}>
+  return <div style={{
+    width: '500px', border: '1px solid #333', margin: '20px auto', padding: '20px'
+  }}>
     <h3>AntdFormPage</h3>
     <Form
       ref={formRef}
@@ -265,11 +269,13 @@ function AntdFormPage() {
         }}
       >
         {
-          ({ getFieldValue }) => getFieldValue('gender') === 'other' ? (
+          ({ getFieldValue }) => (getFieldValue('gender') === 'other'
+            ? (
             <FormItem name="customizeGender" label="customizeGender" rules={[{ required: true }]}>
               <Input />
             </FormItem>
-          ) : null
+              )
+            : null)
         }
       </FormItem>
 
@@ -277,11 +283,13 @@ function AntdFormPage() {
         noStyle
         shouldUpdate={(preVal, newVal) => preVal.gender !== newVal.gender}
       >
-        {({ getFieldValue }) => getFieldValue('gender') === 'other' ? (
+        {({ getFieldValue }) => (getFieldValue('gender') === 'other'
+          ? (
           <FormItem name={'other'} label="other">
             <Input />
           </FormItem>
-        ) : null}
+            )
+          : null)}
       </FormItem>
       {/* <FormItem
         name="gender"
@@ -364,7 +372,5 @@ function AntdFormPage() {
 //     )
 //   }
 // }
-
-
 
 export default AntdFormPage;

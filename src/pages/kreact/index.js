@@ -1,13 +1,13 @@
 import KreactPre from "./pages/kreact-pre";
+import Kreact from "./pages/kreact";
 
-
-function Kreact(props) {
-
+function KReact(props) {
   return (
     <div>
-      {KreactPre()}
+      {/* {KreactPre()} */}
+      {Kreact()}
     </div>
   )
 }
 
-export default Kreact;
+export default KReact;

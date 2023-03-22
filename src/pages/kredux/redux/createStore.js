@@ -8,7 +8,7 @@ function createStore(reducer, enhancer) {
 
   function dispatch(action) {
     currentState = reducer(currentState, action);
-    currentListeners.forEach(listener => listener())
+    currentListeners.forEach((listener) => listener())
   }
   function getState() {
     return currentState;
@@ -24,9 +24,8 @@ function createStore(reducer, enhancer) {
   return {
     dispatch, // 触发更新
     getState, // 获取状态
-    subscribe, //订阅
+    subscribe // 订阅
   }
-
 }
 
 export default createStore;

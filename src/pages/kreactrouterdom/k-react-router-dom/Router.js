@@ -3,7 +3,6 @@ import { Component } from "react";
 import RouterContext from "./RouterContext";
 
 class Router extends Component {
-
   static computeRootMatch(pathname) {
     return {
       path: '/',
@@ -16,7 +15,7 @@ class Router extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      location: props.history.location,
+      location: props.history.location
     }
     this.unlisten = props.history.listen((location) => {
       this.setState({ location })

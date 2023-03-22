@@ -7,14 +7,12 @@ const ConsumerPage = (props) => {
 
   return <div><ThemeConsumer>
     {
-      themeContext => {
+      (themeContext) => {
         console.log(themeContext)
-        return <div style={{color: themeContext.themeColor}}>
+        return <div style={{ color: themeContext.themeColor }}>
           <UserConsumer>
             {
-              userContext => {
-                return <span>{userContext.name}</span>
-              }
+              (userContext) => <span>{userContext.name}</span>
             }
           </UserConsumer>
         </div>

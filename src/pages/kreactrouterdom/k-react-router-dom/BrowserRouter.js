@@ -3,7 +3,6 @@ import { createBrowserHistory } from "history";
 import Router from './Router';
 
 class BrowserRouter extends Component {
-
   constructor(props) {
     super(props)
     this.history = createBrowserHistory();

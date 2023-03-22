@@ -1,10 +1,10 @@
-import React, { useReducer, useEffect, useLayoutEffect, useCallback } from "react";
+import React, {
+  useReducer, useEffect, useLayoutEffect, useCallback
+} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import store, { countReducer } from "../store";
 
-const init = initArg => {
-  return initArg - 0;
-}
+const init = (initArg) => initArg - 0
 
 export default function HooksPage(props) {
   const count = useSelector(({ count }) => count)
@@ -18,7 +18,6 @@ export default function HooksPage(props) {
   useLayoutEffect(() => {
     console.log('useLayoutEffect');
   }, [])
-
 
   const minus = useCallback(
     () => {

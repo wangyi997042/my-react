@@ -17,7 +17,6 @@ export default class Redirect extends Component {
                 }}
               />
             )
-
           }
         }
       </RouterContext.Consumer>

@@ -1,4 +1,3 @@
-
 import React, { useState, Component } from "react";
 
 // import {
@@ -25,10 +24,8 @@ import {
   useLocation,
   useRouteMatch,
   useParams,
-  withRouter,
+  withRouter
 } from "./k-react-router-dom";
-
-
 
 import './index.less';
 
@@ -66,8 +63,6 @@ function RouterPage() {
       </Switch>
     </Router>
   </div>
-
-
 }
 
 function children(props) {
@@ -77,7 +72,6 @@ function children(props) {
 }
 
 function Product() {
-
   const { params, url } = useRouteMatch();
   const ppp = useParams();
   const uLoc = useLocation()
@@ -90,12 +84,11 @@ function Product() {
   return (
     <div>
       <h1>Search-{id}</h1>
-      <Link to={url + "/detail"}>详情</Link>
-      <Route path={url + "/detail"} component={Detail} />
+      <Link to={`${url}/detail`}>详情</Link>
+      <Route path={`${url}/detail`} component={Detail} />
     </div>
   )
 }
-
 
 class Product1 extends Component {
   render() {
@@ -111,9 +104,7 @@ class Product1 extends Component {
 
 const Product2 = withRouter(Product1)
 
-const Detail = () => {
-  return (
+const Detail = () => (
     <div>Detail</div>
-  )
-}
+)
 export default RouterPage;
