@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-// import Form, { Field } from "rc-field-form"
-import { Button, Input } from 'antd';
-import Form, { Field } from "../components/my-rc-field-form";
+import Form, { Field } from "rc-field-form"
+import { Button, Input, Switch } from 'antd';
+// import Form, { Field } from "../components/my-rc-field-form";
 
 const userNameRules = { required: true, message: '用户名必填！！！' }
 const passwordRules = { required: true, message: '密码必填！！！' }
@@ -32,6 +32,13 @@ export default function MyRcFieldForm() {
         </Field>
         <Field name='password' label='password' rules={[passwordRules]}>
           <Input placeholder='password' />
+        </Field>
+        <Field
+          label="开关"
+          name={'switch'}
+          valuePropName='checked'
+        >
+          <Switch /> {/* 23 */}
         </Field>
 
         <Button htmlType='submit'>submit</Button>

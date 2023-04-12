@@ -18,7 +18,7 @@ module.exports = {
     'no-param-reassign': 'off', // ['error', { props: false }], // 函数形参可修改
     'no-plusplus': 'off',
     'no-shadow': 'off',
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-console': 'off', // process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-unused-vars': 'off',
     'space-before-function-paren': 'off',
